@@ -53,7 +53,7 @@ export default function PokeList() {
         setLoading(false)
       })
       .catch(() => {
-        setError('Error al cargar los Pokémon 😢')
+        setError('Error al cargar los Pokémon')
         setLoading(false)
       })
   }, [])
@@ -64,7 +64,7 @@ export default function PokeList() {
     return matchSearch && matchGen
   })
 
-  if (loading) return <p className="status">Cargando Pokémon... ⏳</p>
+  if (loading) return <p className="status">Cargando Pokémon... </p>
   if (error) return <p className="status">{error}</p>
 
   return (
@@ -73,7 +73,7 @@ export default function PokeList() {
         <input
           className="search"
           type="text"
-          placeholder="🔍 Buscar Pokémon..."
+          placeholder="Buscar Pokémon..."
           value={search}
           onChange={e => setSearch(e.target.value)}
         />
