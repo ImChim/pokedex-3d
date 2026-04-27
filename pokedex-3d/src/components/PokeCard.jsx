@@ -12,8 +12,7 @@ const TYPE_COLORS = {
 export default function PokeCard({ pokemon }) {
   const mainType = pokemon.types[0].type.name
   const color = TYPE_COLORS[mainType] || '#919AA2'
-  const artwork = pokemon.sprites.other['official-artwork'].front_default
-
+  const artwork = pokemon.sprites.front_default
   return (
     <div className="card" style={{ '--type-color': color }}>
       <div className="card-bg" />

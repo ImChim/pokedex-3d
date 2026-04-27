@@ -35,11 +35,10 @@ const STARTERS = [
 
 const GENERATIONS = ['Todos', 'Gen I', 'Gen II', 'Gen III', 'Gen IV', 'Gen V', 'Gen VI', 'Gen VII', 'Gen VIII', 'Gen IX']
 
-export default function PokeList() {
+export default function PokeList({ search = '' }) {
   const [pokemon, setPokemon] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [search, setSearch] = useState('')
   const [genFilter, setGenFilter] = useState('Todos')
 
   useEffect(() => {
@@ -53,7 +52,7 @@ export default function PokeList() {
         setLoading(false)
       })
       .catch(() => {
-        setError('Error al cargar los Pokémon')
+        setError('Error al cargar los Pokémon 😢')
         setLoading(false)
       })
   }, [])
@@ -64,30 +63,21 @@ export default function PokeList() {
     return matchSearch && matchGen
   })
 
-  if (loading) return <p className="status">Cargando Pokémon... </p>
+  if (loading) return <p className="status">Cargando Pokémon... ⏳</p>
   if (error) return <p className="status">{error}</p>
 
   return (
     <div>
-      <div className="filters">
-        <input
-          className="search"
-          type="text"
-          placeholder="Buscar Pokémon..."
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-        />
-        <div className="gen-filters">
-          {GENERATIONS.map(gen => (
-            <button
-              key={gen}
-              className={`gen-btn ${genFilter === gen ? 'active' : ''}`}
-              onClick={() => setGenFilter(gen)}
-            >
-              {gen}
-            </button>
-          ))}
-        </div>
+      <div className="gen-filters">
+        {GENERATIONS.map(gen => (
+          <button
+            key={gen}
+            className={`gen-btn ${genFilter === gen ? 'active' : ''}`}
+            onClick={() => setGenFilter(gen)}
+          >
+            {gen}
+          </button>
+        ))}
       </div>
       <div className="grid">
         {filtered.map(p => <PokeCard key={p.id} pokemon={p} />)}
