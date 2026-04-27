@@ -33,7 +33,18 @@ const STARTERS = [
   { name: 'quaxly', gen: 'Gen IX' },
 ]
 
-const GENERATIONS = ['Todos', 'Gen I', 'Gen II', 'Gen III', 'Gen IV', 'Gen V', 'Gen VI', 'Gen VII', 'Gen VIII', 'Gen IX']
+const GENERATIONS = [
+  { label: 'Todos', gen: 'Todos' },
+  { label: 'Kanto', gen: 'Gen I' },
+  { label: 'Johto', gen: 'Gen II' },
+  { label: 'Hoenn', gen: 'Gen III' },
+  { label: 'Sinnoh', gen: 'Gen IV' },
+  { label: 'Unova', gen: 'Gen V' },
+  { label: 'Kalos', gen: 'Gen VI' },
+  { label: 'Alola', gen: 'Gen VII' },
+  { label: 'Galar', gen: 'Gen VIII' },
+  { label: 'Paldea', gen: 'Gen IX' },
+]
 
 export default function PokeList({ search = '' }) {
   const [pokemon, setPokemon] = useState([])
@@ -69,16 +80,16 @@ export default function PokeList({ search = '' }) {
   return (
     <div>
       <div className="gen-filters">
-        {GENERATIONS.map(gen => (
-          <button
-            key={gen}
-            className={`gen-btn ${genFilter === gen ? 'active' : ''}`}
-            onClick={() => setGenFilter(gen)}
-          >
-            {gen}
-          </button>
-        ))}
-      </div>
+  {GENERATIONS.map(({ label, gen }) => (
+    <button
+      key={gen}
+      className={`gen-btn ${genFilter === gen ? 'active' : ''}`}
+      onClick={() => setGenFilter(gen)}
+    >
+      {label}
+    </button>
+  ))}
+</div>
       <div className="grid">
         {filtered.map(p => <PokeCard key={p.id} pokemon={p} />)}
       </div>
