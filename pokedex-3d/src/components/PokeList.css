@@ -1,26 +1,23 @@
-.status {
-  text-align: center;
-  font-size: 1.5rem;
-  margin: 40px 0;
+.gen-btn {
+  padding: 8px 18px;
+  border-radius: 50px;
+  border: 2px solid #ddd;
+  background: white;
+  color: black;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.search {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  width: 100%;
-  max-width: 400px;
-  border-radius: 25px;
-  border: 2px solid #ffcb05;
-  background: #16213e;
-  color: white;
-  font-size: 1rem;
-  outline: none;
+.gen-btn:hover {
+  border-color: #E8402A;
+  color: black;
+  background: #fff0ee;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
+.gen-btn.active {
+  background: #E8402A;
+  border-color: #E8402A;
+  color: black;
 }
