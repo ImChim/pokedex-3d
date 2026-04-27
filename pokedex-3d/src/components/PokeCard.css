@@ -1,0 +1,50 @@
+.card {
+  background: #16213e;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid #0f3460;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #ffcb05;
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+}
+
+.card h3 {
+  text-transform: capitalize;
+  margin: 8px 0;
+  color: #ffcb05;
+}
+
+.types {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.type {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  background: #0f3460;
+}
+
+.fire { background: #ff6b35; }
+.water { background: #4fc3f7; color: #000; }
+.grass { background: #66bb6a; color: #000; }
+.electric { background: #ffcb05; color: #000; }
+.psychic { background: #f06292; }
+.ice { background: #80deea; color: #000; }
+.dragon { background: #7c4dff; }
+.dark { background: #424242; }
+.poison { background: #ab47bc; }
+.normal { background: #78909c; }
