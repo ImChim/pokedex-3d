@@ -75,7 +75,7 @@ export default function PokeBall3D() {
   return (
     <div style={{ height: '280px', margin: '10px auto 24px', maxWidth: '400px' }}>
       <Canvas camera={{ position: [0, 1.5, 5], fov: 40 }}>
-        <ambientLight intensity={0.4} />
+        <ambientLight intensity={1.5} />
         <pointLight position={[5, 5, 5]} intensity={2} color="#ffffff" />
         <pointLight position={[-5, -3, -5]} intensity={0.8} color="#aaaaff" />
         <spotLight position={[0, 8, 2]} intensity={1.5} angle={0.4} penumbra={0.5} />

@@ -21,3 +21,24 @@
   border-color: #E8402A;
   color: black;
 }
+
+.status {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 40px 0;
+  color: #333;
+}
+
+.gen-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
