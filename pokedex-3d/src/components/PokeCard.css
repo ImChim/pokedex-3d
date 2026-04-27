@@ -1,19 +1,19 @@
 .card {
   position: relative;
-  background: #1e1e2e;
-  border-radius: 20px;
+  background: white;
+  border-radius: 12px;
   padding: 16px;
   text-align: center;
   overflow: hidden;
-  border: 2px solid transparent;
+  border: 2px solid #e0e0e0;
   transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
   cursor: pointer;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   border-color: var(--type-color);
-  box-shadow: 0 8px 30px color-mix(in srgb, var(--type-color) 40%, transparent);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 .card-bg {
@@ -23,7 +23,7 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--type-color) 20%, transparent);
+  background: color-mix(in srgb, var(--type-color) 15%, transparent);
   z-index: 0;
 }
 
@@ -32,7 +32,7 @@
   top: 10px;
   left: 14px;
   font-size: 0.75rem;
-  color: #666;
+  color: #aaa;
   font-weight: bold;
   z-index: 1;
 }
@@ -47,15 +47,16 @@
 }
 
 .card-img-wrapper img {
-  width: 100px;
-  height: 100px;
+  width: 96px;
+  height: 96px;
   object-fit: contain;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+  image-rendering: pixelated;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
   transition: transform 0.3s;
 }
 
 .card:hover .card-img-wrapper img {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .card-info {
@@ -67,9 +68,8 @@
   text-transform: capitalize;
   font-size: 1rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #333;
   margin: 8px 0 6px;
-  letter-spacing: 0.5px;
 }
 
 .types {
@@ -112,7 +112,7 @@
 .stat-bar {
   flex: 1;
   height: 5px;
-  background: #333;
+  background: #eee;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -120,7 +120,6 @@
 .stat-fill {
   height: 100%;
   border-radius: 10px;
-  transition: width 0.5s ease;
 }
 
 .stat-val {
